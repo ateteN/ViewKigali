@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "386121723707",
+    "project_id": "viewkigali",
+    "storage_bucket": "viewkigali.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386121723707:android:4c816b91ec38b8bce7111e",
+        "android_client_info": {
+          "package_name": "com.example.viewkigali"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuZctw8gPVbMo8N7JtqgMKRFPFT5rd228"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

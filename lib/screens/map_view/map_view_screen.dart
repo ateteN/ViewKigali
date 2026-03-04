@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../blocs/listing/listing_bloc.dart';
 import '../../blocs/listing/listing_state.dart';
-import 'listing_detail/listing_detail_screen.dart';
+import '../listing_detail/listing_detail_screen.dart';
 
 class MapViewScreen extends StatelessWidget {
   const MapViewScreen({super.key});
