@@ -4,6 +4,7 @@ import '../../blocs/auth/auth_bloc.dart';
 import '../../blocs/auth/auth_event.dart';
 import '../../blocs/user_profile/user_profile_cubit.dart';
 import '../../blocs/notification/notification_cubit.dart';
+import '../../services/listing_service.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

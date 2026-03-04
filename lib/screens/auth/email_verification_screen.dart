@@ -50,6 +50,25 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
             const SizedBox(height: 24),
             const Text('The page will automatically update once verified.'),
             const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () async {
+                try {
+                  context.read<AuthBloc>().add(ReloadUserRequested()); // Sync first
+                  // Trigger resend through the BLoC or directly via service for simplicity in this utility screen
+                  // Better to use BLoC if we wanted to manage state, but direct service is fine for a quick fix
+                  await context.read<AuthBloc>().state.user?.sendEmailVerification();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Verification email resent!')),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Error resending email: $e')),
+                  );
+                }
+              },
+              child: const Text('Resend Verification Email'),
+            ),
+            const SizedBox(height: 12),
             TextButton(
               onPressed: () {
                 context.read<AuthBloc>().add(LogoutRequested());
