@@ -6,7 +6,9 @@ import '../../blocs/listing/listing_event.dart';
 import '../../blocs/listing/listing_state.dart';
 import '../../blocs/my_listings/my_listings_bloc.dart';
 import '../../widgets/listing_card.dart';
-import 'add_edit_listing_screen.dart';
+// import '../../add_edit_listing_screen.dart';
+import '../../screens/add_edit_listing/add_edit_listing_screen.dart';
+
 
 class MyListingsScreen extends StatelessWidget {
   const MyListingsScreen({super.key});
