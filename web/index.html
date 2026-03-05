@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -18,6 +19,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta http-equiv="Permissions-Policy" content="geolocation=*">
   <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
@@ -27,12 +29,16 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>viewkigali</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+  <!-- Google Maps JavaScript API - required for google_maps_flutter on web -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0QJMVMv9VymVMagjxI7oPzvcTcBlMqQs"></script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
+
 </html>
