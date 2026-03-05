@@ -29,6 +29,8 @@ dependencies:
 
   # UI
   cached_network_image: ^3.4.1
+  flutter_map: ^8.1.1
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:
