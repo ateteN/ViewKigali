@@ -9,29 +9,70 @@ class ListingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.only(bottom: 12),
-      child: ListTile(
-        title: Text(
-          listing.name,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ListingDetailScreen(listing: listing),
+          ),
+        );
+      },
+      child: Card(
+        color: Colors.white,
+        margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      listing.name,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: List.generate(5, (index) {
+                        return Icon(
+                          index < 4 ? Icons.star : Icons.star_border,
+                          size: 16,
+                          color: const Color(0xFFF7C35F),
+                        );
+                      }),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    '4.3 ★', // Placeholder rating
+                    style: TextStyle(
+                      color: Colors.grey.shade800,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    '0.6 km', // Placeholder distance
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(listing.category, style: const TextStyle(color: Colors.blue)),
-            Text(listing.address, maxLines: 1, overflow: TextOverflow.ellipsis),
-          ],
-        ),
-        trailing: const Icon(Icons.chevron_right),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => ListingDetailScreen(listing: listing),
-            ),
-          );
-        },
       ),
     );
   }
