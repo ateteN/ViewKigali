@@ -55,8 +55,38 @@ class ViewKigaliApp extends StatelessWidget {
           title: 'ViewKigali',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
             useMaterial3: true,
+            scaffoldBackgroundColor: const Color(0xFF010A26),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color(0xFFF7C35F),
+              primary: const Color(0xFFF7C35F),
+              secondary: const Color(0xFFF7C35F),
+              brightness: Brightness.dark,
+            ),
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              centerTitle: true,
+              titleTextStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              iconTheme: IconThemeData(color: Colors.white),
+            ),
+            cardTheme: const CardThemeData(
+              color: Colors.white,
+              elevation: 0,
+              margin: EdgeInsets.symmetric(vertical: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero,
+              ),
+            ),
+            textTheme: const TextTheme(
+              headlineSmall: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              bodyLarge: TextStyle(color: Colors.white),
+              bodyMedium: TextStyle(color: Colors.white70),
+            ),
           ),
           home: const AuthGate(),
         ),
