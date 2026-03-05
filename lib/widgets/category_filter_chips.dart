@@ -11,6 +11,7 @@ class CategoryFilterChips extends StatelessWidget {
     return BlocBuilder<SearchFilterCubit, SearchFilterState>(
       builder: (context, state) {
         return SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
@@ -24,19 +25,31 @@ class CategoryFilterChips extends StatelessWidget {
                       context.read<SearchFilterCubit>().updateCategory(null);
                     }
                   },
+                  backgroundColor: Colors.white,
+                  labelStyle: TextStyle(
+                    color: state.selectedCategory == null ? Colors.black : Colors.black,
+                  ),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  side: BorderSide.none,
                 ),
               ),
               ...AppConstants.categories.map((category) {
+                final isSelected = state.selectedCategory == category;
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                   child: FilterChip(
                     label: Text(category),
-                    selected: state.selectedCategory == category,
+                    selected: isSelected,
                     onSelected: (selected) {
                       context.read<SearchFilterCubit>().updateCategory(
                             selected ? category : null,
                           );
                     },
+                    backgroundColor: Colors.white,
+                    labelStyle: const TextStyle(color: Colors.black),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    side: BorderSide.none,
+                    selectedColor: const Color(0xFFF7C35F),
                   ),
                 );
               }),
