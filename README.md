@@ -1,4 +1,3 @@
-# ViewKigali
 # Kigali City Services & Places Directory
 
 A Flutter mobile application that helps Kigali residents locate different locations including hospitals, police stations, libraries, restaurants, cafés, parks, and tourist attractions. It is built with Firebase Authentication, Cloud Firestore, Google Maps integration, and BLoC state management.
