@@ -109,7 +109,6 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
 
   Future<void> _getDirections() async {
     if (!kIsWeb) {
-      // Mobile: launch Google Maps app
       final lat = widget.listing.latitude;
       final lng = widget.listing.longitude;
       final googleMapsUri = Uri.parse('google.navigation:q=$lat,$lng&mode=d');
@@ -177,7 +176,6 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
 
   Widget _buildMap() {
     if (!kIsWeb) {
-      // Mobile: flutter_map
       return FlutterMap(
         options: MapOptions(
           initialCenter:
@@ -205,7 +203,7 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
       );
     }
 
-    // Web: Google Maps iframe
+    
     if (_showDirections && _userPosition != null) {
       return HtmlElementView(viewType: _directionsViewId);
     }
